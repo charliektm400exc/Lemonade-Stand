@@ -33,6 +33,11 @@ class ViewController: UIViewController {
     var fourthContainerTitleLabel: UILabel!
     var fourthContainerSubTitleLabelLineOne: UILabel!
     var fourthContainerSubTitleLabelLineTwo: UILabel!
+    var fiifthContainerTitleLabel: UILabel!
+    var fifthContainerSubTitleLabelLineOne: UILabel!
+    var fifthContainerSubTitleLabelLineTwo: UILabel!
+    var fifthContainerSubTitleLabelLineThree: UILabel!
+    var fifthContainerSubTitleLabelLineFour: UILabel!
     var lemonsToMixLabel: UILabel!
     var lemonsToMixTitleLabel: UILabel!
     var iceCubesToMixLabel: UILabel!
@@ -140,7 +145,7 @@ class ViewController: UIViewController {
         self.secondContainerTitelLabel.textColor = UIColor.redColor()
         self.secondContainerTitelLabel.font = UIFont(name: "AmericanTypewriter", size: 20)
         self.secondContainerTitelLabel.sizeToFit()
-        self.secondContainerTitelLabel.center = CGPoint(x: self.secondContainer.bounds.origin.x + 55, y: self.secondContainerTitelLabel.bounds.origin.y + 18)
+        self.secondContainerTitelLabel.center = CGPoint(x: self.secondContainer.bounds.origin.x + 50, y: self.secondContainerTitelLabel.bounds.origin.y + 18)
         self.secondContainerTitelLabel.textAlignment = NSTextAlignment.Left
          containerView.addSubview(self.secondContainerTitelLabel)
         
@@ -183,7 +188,7 @@ class ViewController: UIViewController {
         self.thirdContainerTitleLabel.textColor = UIColor.blueColor()
         self.thirdContainerTitleLabel.font = UIFont(name: "AmericanTypewriter", size: 20)
         self.thirdContainerTitleLabel.sizeToFit()
-        self.thirdContainerTitleLabel.center = CGPoint(x: self.thirdContainer.bounds.origin.x + 120, y: self.thirdContainerTitleLabel.bounds.origin.y + 18)
+        self.thirdContainerTitleLabel.center = CGPoint(x: self.thirdContainer.bounds.origin.x + 125, y: self.thirdContainerTitleLabel.bounds.origin.y + 18)
         self.thirdContainerTitleLabel.textAlignment = NSTextAlignment.Left
         containerView.addSubview(self.thirdContainerTitleLabel)
         
@@ -279,14 +284,11 @@ class ViewController: UIViewController {
         self.fourthContainerTitleLabel.textColor = UIColor.blueColor()
         self.fourthContainerTitleLabel.font = UIFont(name: "American Typewriter", size: 20)
         self.fourthContainerTitleLabel.sizeToFit()
-        self.fourthContainerTitleLabel.center = CGPointMake(self.fourthContainer.frame.origin.x + 120, self.fourthContainer.bounds.origin.y + 18)
+        self.fourthContainerTitleLabel.center = CGPointMake(self.fourthContainer.frame.origin.x + 125, self.fourthContainer.bounds.origin.y + 10)
         self.fourthContainerTitleLabel.textAlignment = NSTextAlignment.Left
         containerView.addSubview(self.fourthContainerTitleLabel)
         
-        
-        //2222222222
-        
-      
+
         self.fourthContainerSubTitleLabelLineOne = UILabel()
         self.fourthContainerSubTitleLabelLineOne.text = "Do your cusomers prefer more"
         self.fourthContainerSubTitleLabelLineOne.textColor = UIColor.blueColor()
@@ -311,7 +313,7 @@ class ViewController: UIViewController {
         self.lemonsToMixLabel.textColor = UIColor.blackColor()
         self.lemonsToMixLabel.font = UIFont(name: "Menlo-Bold", size: 16)
         self.lemonsToMixLabel.sizeToFit()
-        self.lemonsToMixLabel.center = CGPoint(x: self.thirdContainer.bounds.origin.x + 150, y: self.thirdContainer.bounds.height * kThird + 25)
+        self.lemonsToMixLabel.center = CGPoint(x: self.fourthContainer.bounds.origin.x + 150, y: self.fourthContainer.bounds.height * kThird + 25)
         self.lemonsToMixLabel.textAlignment = NSTextAlignment.Left
         containerView.addSubview(self.lemonsToMixLabel)
 
@@ -320,7 +322,7 @@ class ViewController: UIViewController {
         self.lemonsToMixPlusButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
         self.lemonsToMixPlusButton.titleLabel?.font = UIFont(name: "Superclarendon-Bold", size: 16)
         self.lemonsToMixPlusButton.sizeToFit()
-        self.lemonsToMixPlusButton.center = CGPoint(x: containerView.frame.width * kHalf + 20, y: self.thirdContainer.bounds.height * kThird + 25)
+        self.lemonsToMixPlusButton.center = CGPoint(x: containerView.frame.width * kHalf + 20, y: self.fourthContainer.bounds.height * kThird + 25)
         self.lemonsToMixPlusButton.addTarget(self, action: "lemonsToPurcasePlusButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
         containerView.addSubview(self.lemonsToMixPlusButton)
         
@@ -329,7 +331,7 @@ class ViewController: UIViewController {
         self.lemonsToMixLabel.textColor = UIColor.blackColor()
         self.lemonsToMixLabel.font = UIFont(name: "Menlo-Bold", size: 16)
         self.lemonsToMixLabel.sizeToFit()
-        self.lemonsToMixLabel.center = CGPoint(x: self.thirdContainer.bounds.width * kHalf + 60, y: self.thirdContainer.bounds.height * kThird + 25)
+        self.lemonsToMixLabel.center = CGPoint(x: self.fourthContainer.bounds.width * kHalf + 60, y: self.fourthContainer.bounds.height * kThird + 25)
         self.lemonsToMixLabel.textAlignment = NSTextAlignment.Left
         containerView.addSubview(self.lemonsToMixLabel)
         
@@ -340,7 +342,7 @@ class ViewController: UIViewController {
         self.lemonsToMixMinusButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
         self.lemonsToMixMinusButton.titleLabel?.font = UIFont(name: "Superclarendon-Bold", size: 16)
         self.lemonsToMixMinusButton.sizeToFit()
-        self.lemonsToMixMinusButton.center = CGPoint(x: containerView.frame.width * kHalf + 100, y: self.thirdContainer.bounds.height * kThird + 25)
+        self.lemonsToMixMinusButton.center = CGPoint(x: containerView.frame.width * kHalf + 100, y: self.fourthContainer.bounds.height * kThird + 25)
         self.lemonsToMixMinusButton.addTarget(self, action: "lemonsToPurcaseMinusButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
         containerView.addSubview(self.lemonsToMixMinusButton)
         
@@ -351,7 +353,7 @@ class ViewController: UIViewController {
         self.iceCubesToMixTitleLabel.textColor = UIColor.blackColor()
         self.iceCubesToMixTitleLabel.font = UIFont(name: "Menlo-Bold", size: 16)
         self.iceCubesToMixTitleLabel.sizeToFit()
-        self.iceCubesToMixTitleLabel.center = CGPoint(x: self.thirdContainer.bounds.origin.x + 95,  y: self.thirdContainer.bounds.height * kThird * 2 + 10)
+        self.iceCubesToMixTitleLabel.center = CGPoint(x: self.fourthContainer.bounds.origin.x + 95,  y: self.fourthContainer.bounds.height * kThird * 2 + 10)
         self.iceCubesToMixTitleLabel.textAlignment = NSTextAlignment.Left
         containerView.addSubview(self.iceCubesToMixTitleLabel)
         
@@ -360,7 +362,7 @@ class ViewController: UIViewController {
         self.iceCubesToMixPlusButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
         self.iceCubesToMixPlusButton.titleLabel?.font = UIFont(name: "Superclarendon-Bold", size: 16)
         self.iceCubesToMixPlusButton.sizeToFit()
-        self.iceCubesToMixPlusButton.center = CGPoint(x: containerView.frame.width * kHalf + 20, y: self.thirdContainer.bounds.height * kThird * 2 + 10)
+        self.iceCubesToMixPlusButton.center = CGPoint(x: containerView.frame.width * kHalf + 20, y: self.fourthContainer.bounds.height * kThird * 2 + 10)
         self.iceCubesToMixPlusButton.addTarget(self, action: "iceToPurcasePlusButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
         containerView.addSubview(self.iceCubesToMixPlusButton)
         
@@ -369,7 +371,7 @@ class ViewController: UIViewController {
         self.iceCubesToMixLabel.textColor = UIColor.blackColor()
         self.iceCubesToMixLabel.font = UIFont(name: "Menlo-Bold", size: 16)
         self.iceCubesToMixLabel.sizeToFit()
-        self.iceCubesToMixLabel.center = CGPoint(x: self.thirdContainer.bounds.width * kHalf + 60, y: self.thirdContainer.bounds.height * kThird * 2 + 10)
+        self.iceCubesToMixLabel.center = CGPoint(x: self.fourthContainer.bounds.width * kHalf + 60, y: self.fourthContainer.bounds.height * kThird * 2 + 10)
         self.iceCubesToMixLabel.textAlignment = NSTextAlignment.Left
         containerView.addSubview(self.iceCubesToMixLabel)
         
@@ -380,17 +382,61 @@ class ViewController: UIViewController {
         self.iceCubesToMixMinusButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
         self.iceCubesToMixMinusButton.titleLabel?.font = UIFont(name: "Superclarendon-Bold", size: 16)
         self.iceCubesToMixMinusButton.sizeToFit()
-        self.iceCubesToMixMinusButton.center = CGPoint(x: containerView.frame.width * kHalf + 100, y: self.thirdContainer.bounds.height * kThird * 2 + 10)
+        self.iceCubesToMixMinusButton.center = CGPoint(x: containerView.frame.width * kHalf + 100, y: self.fourthContainer.bounds.height * kThird * 2 + 10)
         self.iceCubesToMixMinusButton.addTarget(self, action: "iceToPurcaseMinusButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
         containerView.addSubview(self.iceCubesToMixMinusButton)
-
+    
+    }
+ 
+    func setUpFifthContainer(containerView: UIView) {
+        
+        self.fiifthContainerTitleLabel = UILabel()
+        self.fiifthContainerTitleLabel.text = "Step 2: Start selling your brew"
+        self.fiifthContainerTitleLabel.textColor = UIColor.blueColor()
+        self.fiifthContainerTitleLabel.font = UIFont(name: "American Typewriter", size: 20)
+        self.fiifthContainerTitleLabel.sizeToFit()
+        self.fiifthContainerTitleLabel.center = CGPointMake(self.fourthContainer.frame.origin.x + 125, self.fourthContainer.bounds.origin.y + 10)
+        self.fiifthContainerTitleLabel.textAlignment = NSTextAlignment.Left
+        containerView.addSubview(self.fiifthContainerTitleLabel)
         
         
+        self.fifthContainerSubTitleLabelLineOne = UILabel()
+        self.fifthContainerSubTitleLabelLineOne.text = "At the end of the day you will either"
+        self.fifthContainerSubTitleLabelLineOne.textColor = UIColor.blueColor()
+        self.fifthContainerSubTitleLabelLineOne.font = UIFont(name: "American Typewriter", size: 15)
+        self.fifthContainerSubTitleLabelLineOne.sizeToFit()
+        self.fifthContainerSubTitleLabelLineOne.center = CGPointMake(self.fourthContainer.frame.origin.x + 220, self.fourthContainer.bounds.height * kThird - 10)
+        self.fifthContainerSubTitleLabelLineOne.textAlignment = NSTextAlignment.Left
+        containerView.addSubview(self.fifthContainerSubTitleLabelLineOne)
         
         
+        self.fifthContainerSubTitleLabelLineTwo = UILabel()
+        self.fifthContainerSubTitleLabelLineTwo.text = "make or lose money. If you don't have"
+        self.fifthContainerSubTitleLabelLineTwo.textColor = UIColor.blueColor()
+        self.fifthContainerSubTitleLabelLineTwo.font = UIFont(name: "American Typewriter", size: 15)
+        self.fifthContainerSubTitleLabelLineTwo.sizeToFit()
+        self.fifthContainerSubTitleLabelLineTwo.center = CGPointMake(self.fourthContainer.frame.origin.x + 200, self.fourthContainer.bounds.height * kThird + 5)
+        self.fifthContainerSubTitleLabelLineTwo.textAlignment = NSTextAlignment.Left
+        containerView.addSubview(self.fifthContainerSubTitleLabelLineTwo)
         
+       
+        self.fifthContainerSubTitleLabelLineThree = UILabel()
+        self.fifthContainerSubTitleLabelLineThree.text = "enough money to buy ne inventory"
+        self.fifthContainerSubTitleLabelLineThree.textColor = UIColor.blueColor()
+        self.fifthContainerSubTitleLabelLineThree.font = UIFont(name: "American Typewriter", size: 15)
+        self.fifthContainerSubTitleLabelLineThree.sizeToFit()
+        self.fifthContainerSubTitleLabelLineThree.center = CGPointMake(self.fourthContainer.frame.origin.x + 220, self.fourthContainer.bounds.height * kThird - 10)
+        self.fifthContainerSubTitleLabelLineThree.textAlignment = NSTextAlignment.Left
+        containerView.addSubview(self.fifthContainerSubTitleLabelLineThree)
         
-        
+        self.fifthContainerSubTitleLabelLineFour = UILabel()
+        self.fifthContainerSubTitleLabelLineFour.text = "then you lose the game"
+        self.fifthContainerSubTitleLabelLineFour.textColor = UIColor.blueColor()
+        self.fifthContainerSubTitleLabelLineFour.font = UIFont(name: "American Typewriter", size: 15)
+        self.fifthContainerSubTitleLabelLineFour.sizeToFit()
+        self.fifthContainerSubTitleLabelLineFour.center = CGPointMake(self.fourthContainer.frame.origin.x + 220, self.fourthContainer.bounds.height * kThird - 10)
+        self.fifthContainerSubTitleLabelLineFour.textAlignment = NSTextAlignment.Left
+        containerView.addSubview(self.fifthContainerSubTitleLabelLineThree)
         
     }
     
