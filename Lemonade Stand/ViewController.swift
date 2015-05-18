@@ -26,12 +26,13 @@ class ViewController: UIViewController {
     var lemonsOnHandLabel: UILabel!
     var iceOnHandLabel: UILabel!
     var thirdContainerTitleLabel: UILabel!
-    var lemonsToPurchaseLabel: UILabel!
     var lemonsToPurchaseTitleLabel: UILabel!
+    var lemonsToPurchaseLabel: UILabel!
     var iceCubesToPurchaseLabel: UILabel!
     var iceCubesToPurchaseTitleLabel: UILabel!
     var fourthContainerTitleLabel: UILabel!
-    var fourthContainerSubTitleLabel: UILabel!
+    var fourthContainerSubTitleLabelLineOne: UILabel!
+    var fourthContainerSubTitleLabelLineTwo: UILabel!
     var lemonsToMixLabel: UILabel!
     var lemonsToMixTitleLabel: UILabel!
     var iceCubesToMixLabel: UILabel!
@@ -41,12 +42,12 @@ class ViewController: UIViewController {
     
     var lemonsToPurchasePlusButton: UIButton!
     var lemonsToPurchaseMinusButton: UIButton!
-    var iceToPurchasePlusButton: UIButton!
-    var iceToPurchaseMinusButton: UIButton!
+    var iceCubesToPurchasePlusButton: UIButton!
+    var iceCubesToPurchaseMinusButton: UIButton!
     var lemonsToMixPlusButton: UIButton!
     var lemonsToMixMinusButton: UIButton!
-    var iceToMixPlusButton: UIButton!
-    var iceToMixMinusButton: UIButton!
+    var iceCubesToMixPlusButton: UIButton!
+    var iceCubesToMixMinusButton: UIButton!
     
     // sizes
     
@@ -54,9 +55,12 @@ class ViewController: UIViewController {
     let kFifth:CGFloat = 1.0/5.0
     
     let kSixth:CGFloat = 1.0/6.0
+    let kQuarter:CGFloat = 1.0/4.0
     let kThird:CGFloat = 1.0/3.0
     let kHalf:CGFloat = 1.0/2.0
     let kEigth:CGFloat = 1.0/8.0
+    let kTenth:CGFloat = 1.0/10.0
+    
     
    
     override func viewDidLoad() {
@@ -66,6 +70,7 @@ class ViewController: UIViewController {
             setupFirstContainer(self.firstContainer)
             setupSecondContainer(self.secondContainer)
             setupThirdContainer(self.thirdContainer)
+            setUpFourthContainer(self.fourthContainer)
     }
 
     override func didReceiveMemoryWarning() {
@@ -176,15 +181,223 @@ class ViewController: UIViewController {
         self.thirdContainerTitleLabel = UILabel()
         self.thirdContainerTitleLabel.text = "Step 1: Purchase Supplies"
         self.thirdContainerTitleLabel.textColor = UIColor.blueColor()
-        self.thirdContainerTitleLabel.font = UIFont(name: "AmericanTypewriter", size: 16)
+        self.thirdContainerTitleLabel.font = UIFont(name: "AmericanTypewriter", size: 20)
         self.thirdContainerTitleLabel.sizeToFit()
-        self.thirdContainerTitleLabel.center = CGPoint(x: self.thirdContainer.bounds.origin.x + 100, y: self.thirdContainerTitleLabel.bounds.origin.y + 18)
+        self.thirdContainerTitleLabel.center = CGPoint(x: self.thirdContainer.bounds.origin.x + 120, y: self.thirdContainerTitleLabel.bounds.origin.y + 18)
         self.thirdContainerTitleLabel.textAlignment = NSTextAlignment.Left
         containerView.addSubview(self.thirdContainerTitleLabel)
         
-    }
+
+        self.lemonsToPurchaseTitleLabel = UILabel()
+        self.lemonsToPurchaseTitleLabel.text = "Lemons for $2:"
+        self.lemonsToPurchaseTitleLabel.textColor = UIColor.blackColor()
+        self.lemonsToPurchaseTitleLabel.font = UIFont(name: "Menlo-Bold", size: 16)
+        self.lemonsToPurchaseTitleLabel.sizeToFit()
+        self.lemonsToPurchaseTitleLabel.center = CGPoint(x: self.thirdContainer.bounds.origin.x + 110, y: self.thirdContainer.bounds.height * kThird + 10)
+        self.lemonsToPurchaseTitleLabel.textAlignment = NSTextAlignment.Left
+        containerView.addSubview(self.lemonsToPurchaseTitleLabel)
+        
+        self.lemonsToPurchasePlusButton = UIButton()
+        self.lemonsToPurchasePlusButton.setTitle("+", forState: UIControlState.Normal)
+        self.lemonsToPurchasePlusButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+        self.lemonsToPurchasePlusButton.titleLabel?.font = UIFont(name: "Superclarendon-Bold", size: 16)
+        self.lemonsToPurchasePlusButton.sizeToFit()
+        self.lemonsToPurchasePlusButton.center = CGPoint(x: containerView.frame.width * kHalf + 20, y: self.thirdContainer.bounds.height * kThird + 10)
+        self.lemonsToPurchasePlusButton.addTarget(self, action: "lemonsToPurcasePlusButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        containerView.addSubview(self.lemonsToPurchasePlusButton)
+        
+        self.lemonsToPurchaseLabel = UILabel()
+        self.lemonsToPurchaseLabel.text = "0"
+        self.lemonsToPurchaseLabel.textColor = UIColor.blackColor()
+        self.lemonsToPurchaseLabel.font = UIFont(name: "Menlo-Bold", size: 16)
+        self.lemonsToPurchaseLabel.sizeToFit()
+        self.lemonsToPurchaseLabel.center = CGPoint(x: self.thirdContainer.bounds.width * kHalf + 60, y: self.thirdContainer.bounds.height * kThird + 10)
+        self.lemonsToPurchaseLabel.textAlignment = NSTextAlignment.Left
+        containerView.addSubview(self.lemonsToPurchaseLabel)
+        
+        
+        self.lemonsToPurchaseMinusButton = UIButton()
+        self.lemonsToPurchaseMinusButton.setTitle("-", forState: UIControlState.Normal)
     
+        self.lemonsToPurchaseMinusButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+        self.lemonsToPurchaseMinusButton.titleLabel?.font = UIFont(name: "Superclarendon-Bold", size: 16)
+        self.lemonsToPurchaseMinusButton.sizeToFit()
+        self.lemonsToPurchaseMinusButton.center = CGPoint(x: containerView.frame.width * kHalf + 100, y: self.thirdContainer.bounds.height * kThird + 10)
+        self.lemonsToPurchaseMinusButton.addTarget(self, action: "lemonsToPurcaseMinusButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        containerView.addSubview(self.lemonsToPurchaseMinusButton)
+        
+        
+        
+        self.iceCubesToPurchaseTitleLabel = UILabel()
+        self.iceCubesToPurchaseTitleLabel.text = "Ice Cubes for $1:"
+        self.iceCubesToPurchaseTitleLabel.textColor = UIColor.blackColor()
+        self.iceCubesToPurchaseTitleLabel.font = UIFont(name: "Menlo-Bold", size: 16)
+        self.iceCubesToPurchaseTitleLabel.sizeToFit()
+        self.iceCubesToPurchaseTitleLabel.center = CGPoint(x: self.thirdContainer.bounds.origin.x + 95,  y: self.thirdContainer.bounds.height * kThird * 2)
+        self.iceCubesToPurchaseTitleLabel.textAlignment = NSTextAlignment.Left
+        containerView.addSubview(self.iceCubesToPurchaseTitleLabel)
+    
+        
+     
+        
+        self.iceCubesToPurchasePlusButton = UIButton()
+        self.iceCubesToPurchasePlusButton.setTitle("+", forState: UIControlState.Normal)
+        self.iceCubesToPurchasePlusButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+        self.iceCubesToPurchasePlusButton.titleLabel?.font = UIFont(name: "Superclarendon-Bold", size: 16)
+        self.iceCubesToPurchasePlusButton.sizeToFit()
+        self.iceCubesToPurchasePlusButton.center = CGPoint(x: containerView.frame.width * kHalf + 20, y: self.thirdContainer.bounds.height * kThird * 2)
+        self.iceCubesToPurchasePlusButton.addTarget(self, action: "iceToPurcasePlusButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        containerView.addSubview(self.iceCubesToPurchasePlusButton)
+        
+        self.iceCubesToPurchaseLabel = UILabel()
+        self.iceCubesToPurchaseLabel.text = "0"
+        self.iceCubesToPurchaseLabel.textColor = UIColor.blackColor()
+        self.iceCubesToPurchaseLabel.font = UIFont(name: "Menlo-Bold", size: 16)
+        self.iceCubesToPurchaseLabel.sizeToFit()
+        self.iceCubesToPurchaseLabel.center = CGPoint(x: self.thirdContainer.bounds.width * kHalf + 60, y: self.thirdContainer.bounds.height * kThird * 2)
+        self.iceCubesToPurchaseLabel.textAlignment = NSTextAlignment.Left
+        containerView.addSubview(self.iceCubesToPurchaseLabel)
+        
+        
+        self.iceCubesToPurchaseMinusButton = UIButton()
+        self.iceCubesToPurchaseMinusButton.setTitle("-", forState: UIControlState.Normal)
+        
+        self.iceCubesToPurchaseMinusButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+        self.iceCubesToPurchaseMinusButton.titleLabel?.font = UIFont(name: "Superclarendon-Bold", size: 16)
+        self.iceCubesToPurchaseMinusButton.sizeToFit()
+        self.iceCubesToPurchaseMinusButton.center = CGPoint(x: containerView.frame.width * kHalf + 100, y: self.thirdContainer.bounds.height * kThird * 2)
+        self.iceCubesToPurchaseMinusButton.addTarget(self, action: "iceToPurcaseMinusButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        containerView.addSubview(self.iceCubesToPurchaseMinusButton)
+        
+      }
+    
+    
+    func setUpFourthContainer(containerView: UIView) {
+     
+        self.fourthContainerTitleLabel = UILabel()
+        self.fourthContainerTitleLabel.text = "Step 2: Mix your lemonade."
+        self.fourthContainerTitleLabel.textColor = UIColor.blueColor()
+        self.fourthContainerTitleLabel.font = UIFont(name: "American Typewriter", size: 20)
+        self.fourthContainerTitleLabel.sizeToFit()
+        self.fourthContainerTitleLabel.center = CGPointMake(self.fourthContainer.frame.origin.x + 120, self.fourthContainer.bounds.origin.y + 18)
+        self.fourthContainerTitleLabel.textAlignment = NSTextAlignment.Left
+        containerView.addSubview(self.fourthContainerTitleLabel)
+        
+        
+        //2222222222
+        
+      
+        self.fourthContainerSubTitleLabelLineOne = UILabel()
+        self.fourthContainerSubTitleLabelLineOne.text = "Do your cusomers prefer more"
+        self.fourthContainerSubTitleLabelLineOne.textColor = UIColor.blueColor()
+        self.fourthContainerSubTitleLabelLineOne.font = UIFont(name: "American Typewriter", size: 15)
+        self.fourthContainerSubTitleLabelLineOne.sizeToFit()
+        self.fourthContainerSubTitleLabelLineOne.center = CGPointMake(self.fourthContainer.frame.origin.x + 220, self.fourthContainer.bounds.height * kThird - 10)
+        self.fourthContainerSubTitleLabelLineOne.textAlignment = NSTextAlignment.Left
+        containerView.addSubview(self.fourthContainerSubTitleLabelLineOne)
+        
+        
+        self.fourthContainerSubTitleLabelLineTwo = UILabel()
+        self.fourthContainerSubTitleLabelLineTwo.text = "ice or more lemons today"
+        self.fourthContainerSubTitleLabelLineTwo.textColor = UIColor.blueColor()
+        self.fourthContainerSubTitleLabelLineTwo.font = UIFont(name: "American Typewriter", size: 15)
+        self.fourthContainerSubTitleLabelLineTwo.sizeToFit()
+        self.fourthContainerSubTitleLabelLineTwo.center = CGPointMake(self.fourthContainer.frame.origin.x + 200, self.fourthContainer.bounds.height * kThird + 5)
+        self.fourthContainerSubTitleLabelLineTwo.textAlignment = NSTextAlignment.Left
+        containerView.addSubview(self.fourthContainerSubTitleLabelLineTwo)
+        
+        self.lemonsToMixLabel = UILabel()
+        self.lemonsToMixLabel.text = "Lemons:"
+        self.lemonsToMixLabel.textColor = UIColor.blackColor()
+        self.lemonsToMixLabel.font = UIFont(name: "Menlo-Bold", size: 16)
+        self.lemonsToMixLabel.sizeToFit()
+        self.lemonsToMixLabel.center = CGPoint(x: self.thirdContainer.bounds.origin.x + 150, y: self.thirdContainer.bounds.height * kThird + 25)
+        self.lemonsToMixLabel.textAlignment = NSTextAlignment.Left
+        containerView.addSubview(self.lemonsToMixLabel)
+
+                self.lemonsToMixPlusButton = UIButton()
+        self.lemonsToMixPlusButton.setTitle("+", forState: UIControlState.Normal)
+        self.lemonsToMixPlusButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+        self.lemonsToMixPlusButton.titleLabel?.font = UIFont(name: "Superclarendon-Bold", size: 16)
+        self.lemonsToMixPlusButton.sizeToFit()
+        self.lemonsToMixPlusButton.center = CGPoint(x: containerView.frame.width * kHalf + 20, y: self.thirdContainer.bounds.height * kThird + 25)
+        self.lemonsToMixPlusButton.addTarget(self, action: "lemonsToPurcasePlusButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        containerView.addSubview(self.lemonsToMixPlusButton)
+        
+        self.lemonsToMixLabel = UILabel()
+        self.lemonsToMixLabel.text = "0"
+        self.lemonsToMixLabel.textColor = UIColor.blackColor()
+        self.lemonsToMixLabel.font = UIFont(name: "Menlo-Bold", size: 16)
+        self.lemonsToMixLabel.sizeToFit()
+        self.lemonsToMixLabel.center = CGPoint(x: self.thirdContainer.bounds.width * kHalf + 60, y: self.thirdContainer.bounds.height * kThird + 25)
+        self.lemonsToMixLabel.textAlignment = NSTextAlignment.Left
+        containerView.addSubview(self.lemonsToMixLabel)
+        
+        
+        self.lemonsToMixMinusButton = UIButton()
+        self.lemonsToMixMinusButton.setTitle("-", forState: UIControlState.Normal)
+        
+        self.lemonsToMixMinusButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+        self.lemonsToMixMinusButton.titleLabel?.font = UIFont(name: "Superclarendon-Bold", size: 16)
+        self.lemonsToMixMinusButton.sizeToFit()
+        self.lemonsToMixMinusButton.center = CGPoint(x: containerView.frame.width * kHalf + 100, y: self.thirdContainer.bounds.height * kThird + 25)
+        self.lemonsToMixMinusButton.addTarget(self, action: "lemonsToPurcaseMinusButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        containerView.addSubview(self.lemonsToMixMinusButton)
+        
+        
+        
+        self.iceCubesToMixTitleLabel = UILabel()
+        self.iceCubesToMixTitleLabel.text = "Ice Cubes for $1:"
+        self.iceCubesToMixTitleLabel.textColor = UIColor.blackColor()
+        self.iceCubesToMixTitleLabel.font = UIFont(name: "Menlo-Bold", size: 16)
+        self.iceCubesToMixTitleLabel.sizeToFit()
+        self.iceCubesToMixTitleLabel.center = CGPoint(x: self.thirdContainer.bounds.origin.x + 95,  y: self.thirdContainer.bounds.height * kThird * 2 + 10)
+        self.iceCubesToMixTitleLabel.textAlignment = NSTextAlignment.Left
+        containerView.addSubview(self.iceCubesToMixTitleLabel)
+        
+        self.iceCubesToMixPlusButton = UIButton()
+        self.iceCubesToMixPlusButton.setTitle("+", forState: UIControlState.Normal)
+        self.iceCubesToMixPlusButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+        self.iceCubesToMixPlusButton.titleLabel?.font = UIFont(name: "Superclarendon-Bold", size: 16)
+        self.iceCubesToMixPlusButton.sizeToFit()
+        self.iceCubesToMixPlusButton.center = CGPoint(x: containerView.frame.width * kHalf + 20, y: self.thirdContainer.bounds.height * kThird * 2 + 10)
+        self.iceCubesToMixPlusButton.addTarget(self, action: "iceToPurcasePlusButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        containerView.addSubview(self.iceCubesToMixPlusButton)
+        
+        self.iceCubesToMixLabel = UILabel()
+        self.iceCubesToMixLabel.text = "0"
+        self.iceCubesToMixLabel.textColor = UIColor.blackColor()
+        self.iceCubesToMixLabel.font = UIFont(name: "Menlo-Bold", size: 16)
+        self.iceCubesToMixLabel.sizeToFit()
+        self.iceCubesToMixLabel.center = CGPoint(x: self.thirdContainer.bounds.width * kHalf + 60, y: self.thirdContainer.bounds.height * kThird * 2 + 10)
+        self.iceCubesToMixLabel.textAlignment = NSTextAlignment.Left
+        containerView.addSubview(self.iceCubesToMixLabel)
+        
+        
+        self.iceCubesToMixMinusButton = UIButton()
+        self.iceCubesToMixMinusButton.setTitle("-", forState: UIControlState.Normal)
+        
+        self.iceCubesToMixMinusButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+        self.iceCubesToMixMinusButton.titleLabel?.font = UIFont(name: "Superclarendon-Bold", size: 16)
+        self.iceCubesToMixMinusButton.sizeToFit()
+        self.iceCubesToMixMinusButton.center = CGPoint(x: containerView.frame.width * kHalf + 100, y: self.thirdContainer.bounds.height * kThird * 2 + 10)
+        self.iceCubesToMixMinusButton.addTarget(self, action: "iceToPurcaseMinusButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        containerView.addSubview(self.iceCubesToMixMinusButton)
+
+        
+        
+        
+        
+        
+        
+        
+        
+    }
     
 
 }
+
+
+//go back and see if I can build a constant to make column positioning easier and easy to change
+
 
