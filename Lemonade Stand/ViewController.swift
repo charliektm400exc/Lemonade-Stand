@@ -101,50 +101,51 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func setupContainerViews () {
-    self.firstContainer = UIView(frame: CGRect(
-        x: self.view.bounds.origin.x + kMarginForView,
-        y: self.view.bounds.origin.y,
-        width: self.view.bounds.width - kMarginForView * 2,
-        height: self.view.bounds.height * kFifth))
-    self.firstContainer.backgroundColor = UIColor.redColor()
-    self.view.addSubview(self.firstContainer)
-        
-    self.secondContainer = UIView(frame: CGRect(
-        x: self.view.bounds.origin.x + kMarginForView,
-        y: self.firstContainer.frame.height,
-        width: self.view.bounds.width - kMarginForView * 2,
-        height: self.view.bounds.height * kFifth))
-    self.secondContainer.backgroundColor = UIColor.whiteColor()
-    self.view.addSubview(self.secondContainer)
-
-    self.thirdContainer = UIView(frame: CGRect(
-        x: self.view.bounds.origin.x + kMarginForView,
-        y: self.firstContainer.frame.height + self.secondContainer.frame.height,
-        width: self.view.bounds.width - kMarginForView * 2,
-        height: self.view.bounds.height * kFifth))
-    self.thirdContainer.backgroundColor = UIColor.whiteColor()
-    self.view.addSubview(self.thirdContainer)
-        
-    self.fourthContainer = UIView(frame: CGRect(
-        x: self.view.bounds.origin.x + kMarginForView,
-        y: self.firstContainer.frame.height + self.secondContainer.frame.height + self.thirdContainer.frame.height,
-        width: self.view.bounds.width - kMarginForView * 2,
-        height: self.view.bounds.height * kFifth))
-//    self.fourthContainer.backgroundColor = UIColor.yellowColor()
-    self.view.addSubview(self.fourthContainer)
-        
-    self.fifthContainer = UIView(frame: CGRect(
-        x: self.view.bounds.origin.x + kMarginForView,
-        y: self.firstContainer.frame.height + self.secondContainer.frame.height + self.thirdContainer.frame.height + self.fourthContainer.frame.height,
-        width: self.view.bounds.width - kMarginForView * 2,
-        height: self.view.bounds.height * kFifth))
-//    self.fifthContainer.backgroundColor = UIColor.orangeColor()
-    self.view.addSubview(self.fifthContainer)
-        
     
-    }
+    func setupContainerViews () {
+        self.firstContainer = UIView(frame: CGRect(
+            x: self.view.bounds.origin.x + kMarginForView,
+            y: self.view.bounds.origin.y,
+            width: self.view.bounds.width - kMarginForView * 2,
+            height: self.view.bounds.height * kFifth))
+        self.firstContainer.backgroundColor = UIColor.redColor()
+        self.view.addSubview(self.firstContainer)
         
+        self.secondContainer = UIView(frame: CGRect(
+            x: self.view.bounds.origin.x + kMarginForView,
+            y: self.firstContainer.frame.height,
+            width: self.view.bounds.width - kMarginForView * 2,
+            height: self.view.bounds.height * kFifth))
+        self.secondContainer.backgroundColor = UIColor.whiteColor()
+        self.view.addSubview(self.secondContainer)
+        
+        self.thirdContainer = UIView(frame: CGRect(
+            x: self.view.bounds.origin.x + kMarginForView,
+            y: self.firstContainer.frame.height + self.secondContainer.frame.height,
+            width: self.view.bounds.width - kMarginForView * 2,
+            height: self.view.bounds.height * kFifth))
+        self.thirdContainer.backgroundColor = UIColor.whiteColor()
+        self.view.addSubview(self.thirdContainer)
+        
+        self.fourthContainer = UIView(frame: CGRect(
+            x: self.view.bounds.origin.x + kMarginForView,
+            y: self.firstContainer.frame.height + self.secondContainer.frame.height + self.thirdContainer.frame.height,
+            width: self.view.bounds.width - kMarginForView * 2,
+            height: self.view.bounds.height * kFifth))
+        //    self.fourthContainer.backgroundColor = UIColor.yellowColor()
+        self.view.addSubview(self.fourthContainer)
+        
+        self.fifthContainer = UIView(frame: CGRect(
+            x: self.view.bounds.origin.x + kMarginForView,
+            y: self.firstContainer.frame.height + self.secondContainer.frame.height + self.thirdContainer.frame.height + self.fourthContainer.frame.height,
+            width: self.view.bounds.width - kMarginForView * 2,
+            height: self.view.bounds.height * kFifth))
+        //    self.fifthContainer.backgroundColor = UIColor.orangeColor()
+        self.view.addSubview(self.fifthContainer)
+        
+        
+    }
+    
     func setupFirstContainer(containerView: UIView) {
         self.titleLabel = UILabel()
         self.titleLabel.text = "Lemonade Stand"
@@ -153,8 +154,8 @@ class ViewController: UIViewController {
         self.titleLabel.sizeToFit()
         self.titleLabel.center = containerView.center
         containerView.addSubview(self.titleLabel)
-            
-            
+        
+        
     }
     func setupSecondContainer(containerView: UIView) {
         
@@ -165,7 +166,7 @@ class ViewController: UIViewController {
         self.secondContainerTitelLabel.sizeToFit()
         self.secondContainerTitelLabel.center = CGPoint(x: self.secondContainer.bounds.origin.x + 50, y: self.secondContainerTitelLabel.bounds.origin.y + 18)
         self.secondContainerTitelLabel.textAlignment = NSTextAlignment.Left
-         containerView.addSubview(self.secondContainerTitelLabel)
+        containerView.addSubview(self.secondContainerTitelLabel)
         
         self.bankBalanceDollarLabel = UILabel()
         self.bankBalanceDollarLabel.text = "$ "
@@ -175,7 +176,7 @@ class ViewController: UIViewController {
         self.bankBalanceDollarLabel.center = CGPoint(x: self.secondContainer.frame.width * kHalf, y: self.bankBalanceDollarLabel.bounds.origin.y + 18)
         self.bankBalanceDollarLabel.textAlignment = NSTextAlignment.Left
         containerView.addSubview(self.bankBalanceDollarLabel)
-
+        
         
         
         self.bankBalanceLabel = UILabel()
@@ -186,7 +187,7 @@ class ViewController: UIViewController {
         self.bankBalanceLabel.center = CGPoint(x: self.secondContainer.frame.width * kHalf + 10, y: self.bankBalanceLabel.bounds.origin.y + 18)
         self.bankBalanceLabel.textAlignment = NSTextAlignment.Left
         containerView.addSubview(self.bankBalanceLabel)
-
+        
         
         self.lemonsOnHandLabel = UILabel()
         self.lemonsOnHandLabel.text = "  " + "1"
@@ -205,9 +206,9 @@ class ViewController: UIViewController {
         self.lemonLabel.center = CGPoint(x: self.secondContainer.frame.width * kHalf + 40, y: self.secondContainer.bounds.height * kThird + 10)
         self.lemonLabel.textAlignment = NSTextAlignment.Left
         containerView.addSubview(self.lemonLabel)
-
         
-    
+        
+        
         self.iceCubesOnHandLabel = UILabel()
         self.iceCubesOnHandLabel.text = "      " + "1"
         self.iceCubesOnHandLabel.textColor = UIColor.blackColor()
@@ -226,10 +227,10 @@ class ViewController: UIViewController {
         self.iceCubeLabel.textAlignment = NSTextAlignment.Left
         containerView.addSubview(self.iceCubeLabel)
         
-
-    
-    }
         
+        
+    }
+    
     func setupThirdContainer(containerView: UIView) {
         
         self.thirdContainerTitleLabel = UILabel()
@@ -241,7 +242,7 @@ class ViewController: UIViewController {
         self.thirdContainerTitleLabel.textAlignment = NSTextAlignment.Left
         containerView.addSubview(self.thirdContainerTitleLabel)
         
-
+        
         self.lemonsToPurchaseTitleLabel = UILabel()
         self.lemonsToPurchaseTitleLabel.text = "Lemons for $2:"
         self.lemonsToPurchaseTitleLabel.textColor = UIColor.blackColor()
@@ -272,7 +273,7 @@ class ViewController: UIViewController {
         
         self.lemonsToPurchaseMinusButton = UIButton()
         self.lemonsToPurchaseMinusButton.setTitle("-", forState: UIControlState.Normal)
-    
+        
         self.lemonsToPurchaseMinusButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
         self.lemonsToPurchaseMinusButton.titleLabel?.font = UIFont(name: "Superclarendon-Bold", size: 16)
         self.lemonsToPurchaseMinusButton.sizeToFit()
@@ -290,9 +291,9 @@ class ViewController: UIViewController {
         self.iceCubesToPurchaseTitleLabel.center = CGPoint(x: self.thirdContainer.bounds.origin.x + 95,  y: self.thirdContainer.bounds.height * kThird * 2 - 10)
         self.iceCubesToPurchaseTitleLabel.textAlignment = NSTextAlignment.Left
         containerView.addSubview(self.iceCubesToPurchaseTitleLabel)
-    
         
-     
+        
+        
         
         self.iceCubesToPurchasePlusButton = UIButton()
         self.iceCubesToPurchasePlusButton.setTitle("+", forState: UIControlState.Normal)
@@ -322,8 +323,8 @@ class ViewController: UIViewController {
         self.iceCubesToPurchaseMinusButton.center = CGPoint(x: containerView.frame.width * kHalf + 100, y: self.thirdContainer.bounds.height * kThird * 2 - 10)
         self.iceCubesToPurchaseMinusButton.addTarget(self, action: "iceCubesToPurchaseMinusButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
         containerView.addSubview(self.iceCubesToPurchaseMinusButton)
-
-    
+        
+        
         self.purchaseButton = UIButton()
         self.purchaseButton.setTitle("Purchase", forState: UIControlState.Normal)
         self.purchaseButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
@@ -337,7 +338,7 @@ class ViewController: UIViewController {
     
     
     func setUpFourthContainer(containerView: UIView) {
-     
+        
         self.fourthContainerTitleLabel = UILabel()
         self.fourthContainerTitleLabel.text = "Step 2: Mix your lemonade."
         self.fourthContainerTitleLabel.textColor = UIColor.blueColor()
@@ -347,7 +348,7 @@ class ViewController: UIViewController {
         self.fourthContainerTitleLabel.textAlignment = NSTextAlignment.Left
         containerView.addSubview(self.fourthContainerTitleLabel)
         
-
+        
         self.fourthContainerSubTitleLabelLineOne = UILabel()
         self.fourthContainerSubTitleLabelLineOne.text = "Do your cusomers prefer more"
         self.fourthContainerSubTitleLabelLineOne.textColor = UIColor.blueColor()
@@ -375,8 +376,8 @@ class ViewController: UIViewController {
         self.lemonsToMixLabel.center = CGPoint(x: self.fourthContainer.bounds.origin.x + 150, y: self.fourthContainer.bounds.height * kThird + 25)
         self.lemonsToMixLabel.textAlignment = NSTextAlignment.Left
         containerView.addSubview(self.lemonsToMixLabel)
-
-                self.lemonsToMixPlusButton = UIButton()
+        
+        self.lemonsToMixPlusButton = UIButton()
         self.lemonsToMixPlusButton.setTitle("+", forState: UIControlState.Normal)
         self.lemonsToMixPlusButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
         self.lemonsToMixPlusButton.titleLabel?.font = UIFont(name: "Superclarendon-Bold", size: 16)
@@ -408,11 +409,11 @@ class ViewController: UIViewController {
         
         
         self.iceCubesToMixTitleLabel = UILabel()
-        self.iceCubesToMixTitleLabel.text = "Ice Cubes for $1:"
+        self.iceCubesToMixTitleLabel.text = "Ice Cubes:"
         self.iceCubesToMixTitleLabel.textColor = UIColor.blackColor()
         self.iceCubesToMixTitleLabel.font = UIFont(name: "Menlo-Bold", size: 16)
         self.iceCubesToMixTitleLabel.sizeToFit()
-        self.iceCubesToMixTitleLabel.center = CGPoint(x: self.fourthContainer.bounds.origin.x + 95,  y: self.fourthContainer.bounds.height * kThird * 2)
+        self.iceCubesToMixTitleLabel.center = CGPoint(x: self.fourthContainer.bounds.origin.x + 135,  y: self.fourthContainer.bounds.height * kThird * 2)
         self.iceCubesToMixTitleLabel.textAlignment = NSTextAlignment.Left
         containerView.addSubview(self.iceCubesToMixTitleLabel)
         
@@ -422,7 +423,7 @@ class ViewController: UIViewController {
         self.iceCubesToMixPlusButton.titleLabel?.font = UIFont(name: "Superclarendon-Bold", size: 16)
         self.iceCubesToMixPlusButton.sizeToFit()
         self.iceCubesToMixPlusButton.center = CGPoint(x: containerView.frame.width * kHalf + 20, y: self.fourthContainer.bounds.height * kThird * 2)
-        self.iceCubesToMixPlusButton.addTarget(self, action: "iceToMixPlusButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.iceCubesToMixPlusButton.addTarget(self, action: "iceCubesToMixPlusButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
         containerView.addSubview(self.iceCubesToMixPlusButton)
         
         self.iceCubesToMixLabel = UILabel()
@@ -442,10 +443,10 @@ class ViewController: UIViewController {
         self.iceCubesToMixMinusButton.titleLabel?.font = UIFont(name: "Superclarendon-Bold", size: 16)
         self.iceCubesToMixMinusButton.sizeToFit()
         self.iceCubesToMixMinusButton.center = CGPoint(x: containerView.frame.width * kHalf + 100, y: self.fourthContainer.bounds.height * kThird * 2)
-        self.iceCubesToMixMinusButton.addTarget(self, action: "iceToMixMinusButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.iceCubesToMixMinusButton.addTarget(self, action: "iceCubesToMixMinusButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
         containerView.addSubview(self.iceCubesToMixMinusButton)
-
-    
+        
+        
         self.mixButton = UIButton()
         self.mixButton.setTitle("Mix", forState: UIControlState.Normal)
         self.mixButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
@@ -456,7 +457,7 @@ class ViewController: UIViewController {
         self.mixButton.addTarget(self, action: "mixButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
         containerView.addSubview(self.mixButton)
     }
- 
+    
     func setUpFifthContainer(containerView: UIView) {
         
         self.fiifthContainerTitleLabel = UILabel()
@@ -488,7 +489,7 @@ class ViewController: UIViewController {
         self.fifthContainerSubTitleLabelLineTwo.textAlignment = NSTextAlignment.Left
         containerView.addSubview(self.fifthContainerSubTitleLabelLineTwo)
         
-       
+        
         self.fifthContainerSubTitleLabelLineThree = UILabel()
         self.fifthContainerSubTitleLabelLineThree.text = "enough money to buy ne inventory"
         self.fifthContainerSubTitleLabelLineThree.textColor = UIColor.blackColor()
@@ -516,9 +517,10 @@ class ViewController: UIViewController {
         self.startButton.center = CGPoint(x: containerView.frame.width * kHalf, y: self.thirdContainer.bounds.height * kThird * 2 + 20)
         self.startButton.addTarget(self, action: "startButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
         containerView.addSubview(self.startButton)
-        }
- 
+    }
+    
 
+  
     func lemonsToPurchasePlusButtonPressed (button: UIButton) {
 
     if cashOnHand >= 2 {
@@ -569,43 +571,50 @@ class ViewController: UIViewController {
     
     func lemonsToMixPlusButtonPressed (button: UIButton) {
         
+        if lemonsOnHand > 0 {
         lemonsMixed += 1
         lemonsOnHand -= 1
+        }
         
         updateMainView()
     }
     
     func lemonsToMixMinusButtonPressed (button: UIButton){
         
+        if lemonsMixed > 0 {
+            
         lemonsMixed -= 1
         lemonsOnHand += 1
-
+        }
         updateMainView()
     }
     
     func iceCubesToMixPlusButtonPressed (button: UIButton) {
         
+        if iceCubesOnHand > 0 {
         iceCubesMixed += 1
         iceCubesOnHand -= 1
-        
+        }
         updateMainView()
     }
     
     func iceCubesToMixMinusButtonPressed (button: UIButton){
         
+        if iceCubesMixed > 0 {
         iceCubesMixed -= 1
         iceCubesOnHand += 1
+        }
         updateMainView()
     }
 
-    func MixButtonPressed (button: UIButton) {
+    func mixButtonPressed (button: UIButton) {
         
-        lemonsOnHand = lemonsOnHand + lemonsToPurchase
-        iceCubesOnHand = iceCubesOnHand + iceCubesToPurchase
+        lemonsOnHand = lemonsOnHand - lemonsMixed
+        iceCubesOnHand = iceCubesOnHand - iceCubesMixed
         self.lemonsOnHandLabel.text = "  " + "\(lemonsOnHand)"
         self.iceCubesOnHandLabel.text = "      " + "\(iceCubesOnHand)"
-        lemonsToPurchase = 0
-        iceCubesToPurchase = 0
+        lemonsMixed = 0
+        iceCubesMixed = 0
         updateMainView()
     }
     
@@ -616,8 +625,8 @@ class ViewController: UIViewController {
         self.iceCubesToPurchaseLabel.text = "\(iceCubesToPurchase)"
         self.lemonsToMixLabel.text = "\(lemonsMixed)"
         self.iceCubesToMixLabel.text = "\(iceCubesMixed)"
-        self.iceCubesOnHandLabel.text = "\(iceCubesOnHand)"
-        self.lemonsOnHandLabel.text = "\(lemonsOnHand)"
+        self.iceCubesOnHandLabel.text = "      " + "\(iceCubesOnHand)"
+        self.lemonsOnHandLabel.text = "  " + "\(lemonsOnHand)"
     }
 
 
