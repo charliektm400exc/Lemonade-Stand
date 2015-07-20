@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>8FE2399B-972C-44FD-B599-EF3E9EA7640F</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Lemonade Stand</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>0AC009B2935A99B5F187689E33C51900A9A0A564</key>
 		<string>https://github.com/charliektm400exc/Lemonade-Stand.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Lemonade Stand.xcodeproj</string>
+	<string>Lemonade Stand.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>0AC009B2935A99B5F187689E33C51900A9A0A564</key>

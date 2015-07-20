@@ -55,7 +55,12 @@ class ViewController: UIViewController {
     var iceCubesToPurchase = 0
     var lemonsMixed = 0
     var iceCubesMixed = 0
-
+    var lemonadeRatio: CGFloat = 0.000000
+    var numberOfCustomers = 0
+    
+    // Arrays
+    
+   
     
     // Buttons
     
@@ -447,17 +452,7 @@ class ViewController: UIViewController {
         containerView.addSubview(self.iceCubesToMixMinusButton)
         
         
-        self.mixButton = UIButton()
-        self.mixButton.setTitle("Mix", forState: UIControlState.Normal)
-        self.mixButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
-        self.mixButton.backgroundColor = UIColor.yellowColor()
-        self.mixButton.titleLabel?.font = UIFont(name: "American Typewriter", size: 20)
-        self.mixButton.sizeToFit()
-        self.mixButton.center = CGPoint(x: containerView.frame.width * kHalf, y: self.thirdContainer.bounds.height * kThird * 2 + 30)
-        self.mixButton.addTarget(self, action: "mixButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
-        containerView.addSubview(self.mixButton)
     }
-    
     func setUpFifthContainer(containerView: UIView) {
         
         self.fiifthContainerTitleLabel = UILabel()
@@ -515,8 +510,9 @@ class ViewController: UIViewController {
         self.startButton.titleLabel?.font = UIFont(name: "American Typewriter", size: 20)
         self.startButton.sizeToFit()
         self.startButton.center = CGPoint(x: containerView.frame.width * kHalf, y: self.thirdContainer.bounds.height * kThird * 2 + 20)
-        self.startButton.addTarget(self, action: "startButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.startButton.addTarget(self, action: "startDayButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
         containerView.addSubview(self.startButton)
+    
     }
     
 
@@ -607,18 +603,43 @@ class ViewController: UIViewController {
         updateMainView()
     }
 
-    func mixButtonPressed (button: UIButton) {
+    
+    
+
+
+    func startDayButtonPressed (button: UIButton){
         
-        lemonsOnHand = lemonsOnHand - lemonsMixed
-        iceCubesOnHand = iceCubesOnHand - iceCubesMixed
+        if iceCubesMixed > 0 {
+//        lemonsOnHand = lemonsOnHand - lemonsMixed
+//        iceCubesOnHand = iceCubesOnHand - iceCubesMixed
         self.lemonsOnHandLabel.text = "  " + "\(lemonsOnHand)"
         self.iceCubesOnHandLabel.text = "      " + "\(iceCubesOnHand)"
-        lemonsMixed = 0
+        lemonadeRatio = CGFloat (Double(lemonsMixed)/Double(iceCubesMixed))
+//            println(lemonadeRatio)
+//            println(lemonsMixed)
+//            println(iceCubesMixed)
+            lemonsMixed = 0
         iceCubesMixed = 0
+        }
         updateMainView()
+        
+        creatCustomers()
+
     }
     
- 
+func creatCustomers () {
+    
+    numberOfCustomers =  Int(arc4random_uniform(UInt32(10)))
+    
+    
+
+    
+    
+    return
+    
+    }
+    
+    
       func updateMainView() {
         self.bankBalanceLabel.text = "\(cashOnHand)"
         self.lemonsToPurchaseLabel.text = "\(lemonsToPurchase)"
@@ -634,5 +655,15 @@ class ViewController: UIViewController {
 
 
 //go back and see if I can build a constant to make column positioning easier and easy to change
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
